@@ -3,6 +3,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Array_stack",
+      "request": "launch",
+      "mainClass": "Array_stack"
+    },
+    {
+      "type": "java",
       "name": "linkedlist_stack",
       "request": "launch",
       "mainClass": "linkedlist_stack"
