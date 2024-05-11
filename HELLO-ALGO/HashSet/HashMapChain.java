@@ -113,22 +113,42 @@ class ChainHashMap {
 
     // 获取所有键
     public List<Integer> keySet() {
-
+        List<String> keySet = new ArrayList<>();
+        for (List<Pair> bucket : buckets) {
+            for (Pair pair : bucket) {
+                keySet.add(pair.key);
+            }
+        }
+        return keySet;
     }
 
     // 获取所有键值对
     public List<Pair> pairSet() {
-
+        List<Pair> pairSet = new ArrayList<>();
+        for (List<Pair> bucket : buckets) {
+            pairSet.add(bucket);
+        }
+        return pairSet;
     }
 
     // 获取所有值
     public List<String> valueSet() {
-
+        List<String> valueSet = new ArrayList<>();
+        for (List<Pair> bucket : buckets) {
+            for (Pair pair : bucket) {
+                keySet.add(pair.value);
+            }
+        }
+        return valueSet;
     }
 
     // 打印哈希表
     public void print() {
-
+        for (List<Pair> bucket : buckets) {
+            for (Pair pair : bucket) {
+                System.out.println(pair.key + " -> " + pair.value);
+            }
+        }
     }
 }
 
