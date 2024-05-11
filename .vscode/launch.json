@@ -26,8 +26,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/test/cpptest",
-      "program": "d:/test/cpptest/build/Debug/outDebug",
+      "cwd": "d:/test/testcpp",
+      "program": "d:/test/testcpp/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
