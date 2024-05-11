@@ -94,7 +94,21 @@ class ChainHashMap {
 
     // 扩容哈希表
     public void extend() {
-
+        capacity *= extendRatio;
+        // 暂存哈希表
+        List<List<Pair>> tempList = buckets;
+        // 初始化哈希表
+        buckets = new ArrayList<>(capacity);
+        for (int i = 0; i < capacity; i++) {
+            buckets.add(new ArrayList<>());
+        }
+        size = 0;
+        // 将原哈希表搬运到新哈希表
+        for (List<Pair> pairs : tempList) {
+            for (Pair pair : pairs) {
+                put(pair.key, pair.value);
+            }
+        }
     }
 
     // 获取所有键
