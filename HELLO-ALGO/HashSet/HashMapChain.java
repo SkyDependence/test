@@ -93,7 +93,7 @@ class ChainHashMap {
     }
 
     // 扩容哈希表
-    public void extend() {
+    private void extend() {
         capacity *= extendRatio;
         // 暂存哈希表
         List<List<Pair>> tempList = buckets;
@@ -136,7 +136,7 @@ class ChainHashMap {
         List<String> valueSet = new ArrayList<>();
         for (List<Pair> bucket : buckets) {
             for (Pair pair : bucket) {
-                keySet.add(pair.value);
+                valueSet.add(pair.value);
             }
         }
         return valueSet;
@@ -154,6 +154,25 @@ class ChainHashMap {
 
 
 public class HashMapChain {
-    
+    public static void main(String[] args) {
+        ChainHashMap chainHashMap = new ChainHashMap();
+        
+        chainHashMap.put(1, "1");
+        chainHashMap.put(2, "2");
+        chainHashMap.put(3, "3");
+        chainHashMap.put(4, "4");
+        chainHashMap.put(5, "5");
+        chainHashMap.put(6, "6");
+
+        System.out.println(chainHashMap.get(3));
+        System.out.println(chainHashMap.get(4));
+
+        chainHashMap.remove(2);
+
+        chainHashMap.print();
+
+        chainHashMap.remove(3);
+        System.out.println(chainHashMap.valueSet().toString());
+    }
 }
 

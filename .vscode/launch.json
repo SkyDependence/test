@@ -3,6 +3,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "HashMapChain",
+      "request": "launch",
+      "mainClass": "HashMapChain"
+    },
+    {
+      "type": "java",
       "name": "Array_stack",
       "request": "launch",
       "mainClass": "Array_stack"
