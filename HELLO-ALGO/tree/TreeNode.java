@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -27,6 +28,23 @@ public class TreeNode {
             }
             list.add(node.val);
         }
+        return list;
+    }
+
+    /* DFS */
+    // 前序
+    private void preOrder(TreeNode node, List<Integer> list) {
+        if (node == null) {
+            return;
+        }
+        list.add(node.val);
+        preOrder(node.left, list);
+        preOrder(node.right, list);
+    }
+
+    public List preOrderRes() {
+        List<Integer> list = new ArrayList<>();
+        preOrder(this, list);
         return list;
     }
 }

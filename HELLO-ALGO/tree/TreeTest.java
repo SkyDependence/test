@@ -16,6 +16,7 @@ public class TreeTest {
 
         // BFS
         System.out.println(root.levelOrder());
-
+        System.out.println("/******************************/");
+        System.out.println(root.preOrderRes());
     }
 }
