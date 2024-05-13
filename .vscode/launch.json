@@ -3,6 +3,18 @@
   "configurations": [
     {
       "type": "java",
+      "name": "TreeTest",
+      "request": "launch",
+      "mainClass": "TreeTest"
+    },
+    {
+      "type": "java",
+      "name": "Solution",
+      "request": "launch",
+      "mainClass": "Solution"
+    },
+    {
+      "type": "java",
       "name": "HashMapChain",
       "request": "launch",
       "mainClass": "HashMapChain"
