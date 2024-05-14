@@ -20,5 +20,7 @@ public class TreeTest {
         System.out.println(root.preOrderRes());
         System.out.println("/******************************/");
         System.out.println(root.inOrderRes());
+        System.out.println("/******************************/");
+        System.out.println(root.postOrderRes());
     }
 }

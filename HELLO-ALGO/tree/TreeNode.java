@@ -66,4 +66,22 @@ public class TreeNode {
         return inList;
     }
 
+    // 后序
+    private List<Integer> postList = new ArrayList<>();
+
+    private void postOrder(TreeNode node, List list) {
+        if (node == null) {
+            return;
+        }
+        postOrder(node.left, list);
+        postOrder(node.right, list);
+        list.add(node.val);
+    }
+
+    public List<Integer> postOrderRes() {
+        postList.clear();
+        postOrder(this, postList);
+        return postList;
+    }
+
 }
