@@ -47,4 +47,23 @@ public class TreeNode {
         preOrder(this, list);
         return list;
     }
+
+    // 中序
+    private List<Integer> inList = new ArrayList<>();
+
+    private void inOrder(TreeNode node, List list) {
+        if (node == null) {
+            return;
+        }
+        inOrder(node.left, list);
+        list.add(node.val);
+        inOrder(node.right, list);
+    }
+
+    public List<Integer> inOrderRes() {
+        inList.clear();
+        inOrder(this, inList);
+        return inList;
+    }
+
 }
