@@ -4,8 +4,48 @@ import java.util.Map;
 
 public class Solution {
     public static void main(String[] args) {
-        int[][] grid = { { 1, 2 } };
-        System.out.println(orangesRotting(grid));
+        // int[][] grid = { { 1, 2 } };
+        // System.out.println(orangesRotting(grid));
+        int[] tasks = { 5, 5, 5, 5 };
+        System.out.println(minimumRounds(tasks));
+    }
+
+    public static int minimumRounds(int[] tasks) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int task : tasks) {
+            if (map.containsKey(task)) {
+                map.put(task, map.get(task) + 1);
+            } else {
+                map.put(task, 1);
+            }
+        }
+
+        for (int val : map.values()) {
+            if (val == 1) {
+                return -1;
+            }
+        }
+
+        int count = 0;
+        for (int val : map.values()) {
+            while (val > 1) {
+                if (val > 2) {
+                    val -= 3;
+                    if (val == 1) {
+                        val += 3;
+                        val -= 2;
+                        count++;
+                        continue;
+                    }
+                    count++;
+                } else if (val > 1) {
+                    val -= 2;
+                    count++;
+                }
+            }
+        }
+
+        return count;
     }
 
     public static int orangesRotting(int[][] grid) {
