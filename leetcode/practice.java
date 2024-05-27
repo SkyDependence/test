@@ -2,11 +2,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 public class practice {
     public static void main(String[] args) {
         int[][] mat = { { 3, 3, 1, 1 }, { 2, 2, 1, 2 }, { 1, 1, 1, 2 } };
         System.out.println(diagonalSort(mat));
+    }
+
+    public List<Integer> findPeaks(int[] mountain) {
+        List<Integer> res = new ArrayList<>();
+        for (int i = 1; i < mountain.length - 1; i++) {
+            if (mountain[i] > mountain[i + 1] && mountain[i] > mountain[i - 1]) {
+                res.add(i);
+            }
+        }
+        return res;
     }
     
     public static int[][] diagonalSort(int[][] mat) {
